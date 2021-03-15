@@ -32,7 +32,10 @@ public class ContaCorrente {
 	
 	//atualiza saldo, decrescendo quantia sacada
 	public void sacar(double valor) {
-		saldo -= valor >= 0 ? valor : 0;
+		if(valor> saldo)
+			System.out.printf("Saldo insuficiente para saque de R$%.2f\n===========================================\n", valor);
+		else
+			saldo -= valor >= 0 ? valor : 0;
 	}
 	
 	public void exibirDados() {
